@@ -1,4 +1,6 @@
-﻿namespace Hangman;
+﻿using System.Text;
+
+namespace Hangman;
 
 public class Hangman
 {
@@ -6,7 +8,8 @@ public class Hangman
     public int wrongGuess = 0;
     public string allUserGuesses = "";
     public string randomWord = "";
-    public string[] words = { "word", "thing", "sun", "excalibur", "dependencies", "hangman" };
+    //public string[] words = { "word", "thing", "sun", "excalibur", "dependencies", "hangman" };
+    public string[] words = { "dependencies"};
     public Hangman()
     {
         RunGame();
@@ -57,6 +60,29 @@ public class Hangman
                 if (randomWord[i] == allUserGuesses[j])
                 {
                     Console.WriteLine($"RIGHT LETTER: -{allUserGuesses[j]}-");
+
+                    foreach (var letter in allUserGuesses)
+                    {
+                        int letterPosition = randomWord.IndexOf(randomWord[i]);
+
+                        StringBuilder someString = new StringBuilder(underscoreWordV2);
+                        someString[letterPosition] = randomWord[i];
+                        underscoreWordV2 = someString.ToString();
+
+                    }
+
+
+                    //int letterPosition = randomWord.IndexOf(randomWord[i]);
+
+                    //StringBuilder someString = new StringBuilder(underscoreWordV2);
+                    //someString[letterPosition] = randomWord[i];
+                    //underscoreWordV2 = someString.ToString();
+
+                    //if (underscoreWordV2[i] == allUserGuesses[j])
+                    //{
+
+                    //}
+
                 }
             }
         }
