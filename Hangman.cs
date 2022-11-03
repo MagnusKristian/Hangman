@@ -52,11 +52,11 @@ public class Hangman
 
         for (int i = 0; i < randomWord.Length; i++)
         {
-            for (int j = 0; j < underscoreWord.Length; j++)
+            for (int j = 0; j < allUserGuesses.Length; j++)
             {
-                if (randomWord[i] == underscoreWord[j])
+                if (randomWord[i] == allUserGuesses[j])
                 {
-                    //underscoreWordV2[j] = "x";
+                    Console.WriteLine($"RIGHT LETTER: -{allUserGuesses[j]}-");
                 }
             }
         }
