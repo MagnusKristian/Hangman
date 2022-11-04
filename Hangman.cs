@@ -10,6 +10,7 @@ public class Hangman
     public string randomWord = "";
     //public string[] words = { "word", "thing", "sun", "excalibur", "dependencies", "hangman" };
     public string[] words = { "dependencies"};
+    public string underscoreWordV2 = "";
     public Hangman()
     {
         RunGame();
@@ -18,10 +19,7 @@ public class Hangman
     public void RunGame()
     {
         Console.WriteLine("Welcome to Hangman! Guess the letters and try to not unalive this poor man.");
-        Random random = new Random();
-
-        randomWord = words[random.Next(words.Length)];
-        Console.WriteLine($"the word is {randomWord.Length} characters long");
+        setRandomWord();
 
         while (wrongGuess <= 6)
         {
@@ -43,15 +41,24 @@ public class Hangman
 
     }
 
-    public string PrintWordLetters()
+    public void setRandomWord()
     {
-        string underscoreWord = "";
-        string underscoreWordV2 = "";
+        Random random = new Random();
+
+        randomWord = words[random.Next(words.Length)];
+        Console.WriteLine($"the word is {randomWord.Length} characters long");
+        //string underscoreWord = "";
+        //string underscoreWordV2 = "";
         foreach (var character in randomWord)
         {
-            underscoreWord += "_";
+            //underscoreWord += "_";
             underscoreWordV2 += "_";
+            //kanskje legge til mellomrom mellom "_" og fikse med if elns for å få det til å stemme med det andre greiene.
         }
+    }
+    public string PrintWordLetters()
+    {
+        
 
         for (int i = 0; i < randomWord.Length; i++)
         {
@@ -60,16 +67,39 @@ public class Hangman
                 if (randomWord[i] == allUserGuesses[j])
                 {
                     Console.WriteLine($"RIGHT LETTER: -{allUserGuesses[j]}-");
+                    //Console.WriteLine($"All user guesses: {allUserGuesses}");
+                    //Console.WriteLine($"UnderscoreWordV2: {underscoreWordV2}");
 
-                    foreach (var letter in allUserGuesses)
+                    if (true)
                     {
-                        int letterPosition = randomWord.IndexOf(randomWord[i]);
-
-                        StringBuilder someString = new StringBuilder(underscoreWordV2);
-                        someString[letterPosition] = randomWord[i];
-                        underscoreWordV2 = someString.ToString();
 
                     }
+
+                    int letterPosition = randomWord.IndexOf(randomWord[i]);
+                    StringBuilder someString = new StringBuilder(underscoreWordV2);
+                    someString[letterPosition] = allUserGuesses[j];
+                    underscoreWordV2 = someString.ToString();
+
+
+
+
+                    //foreach (var letter in randomWord)
+                    //{
+                    //    int letterPosition = randomWord.IndexOf(randomWord[i]);
+
+                    //    if (allUserGuesses[j] == letter)
+                    //    {
+                    //        StringBuilder someString = new StringBuilder(underscoreWordV2);
+                    //        someString[letterPosition] = randomWord[letterPosition];
+
+
+                    //        someString.Replace("_", allUserGuesses[j].ToString(), letterPosition,1);
+                    //            underscoreWordV2 = someString.ToString();
+                    //    }
+
+
+
+                    //}
 
 
                     //int letterPosition = randomWord.IndexOf(randomWord[i]);
