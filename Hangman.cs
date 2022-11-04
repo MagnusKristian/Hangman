@@ -74,7 +74,7 @@ public class Hangman
                     {
 
                     }
-
+                    //....
                     int letterPosition = randomWord.IndexOf(randomWord[i]);
                     StringBuilder someString = new StringBuilder(underscoreWordV2);
                     someString[letterPosition] = allUserGuesses[j];
