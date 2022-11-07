@@ -16,19 +16,19 @@ public class Hangman
         //RunGame();
     }
 
-    public void playAgain()
-    {
-        Console.WriteLine("Would you like to play again? Y/N :");
-        string yesOrNo = Console.ReadLine().ToLower();
-        if (yesOrNo == "y")
-        {
-            RunGame();
-        }
-        else
-        {
-            Console.WriteLine("Thanks for playing! Goodbye!");
-        }
-    }
+    //public void playAgain()
+    //{
+    //    Console.WriteLine("Would you like to play again? Y/N :");
+    //    string yesOrNo = Console.ReadLine().ToLower();
+    //    if (yesOrNo == "y")
+    //    {
+    //        RunGame();
+    //    }
+    //    else
+    //    {
+    //        Console.WriteLine("Thanks for playing! Goodbye!");
+    //    }
+    //}
     public void RunGame()
     {
         Console.WriteLine("Welcome to Hangman! Guess the letters and try to not unalive this poor man.");
@@ -68,8 +68,8 @@ public class Hangman
             }
 
         }
-        playAgain();
-        Console.WriteLine($"The word was: {randomWord}");
+        //playAgain();
+        //Console.WriteLine($"The word was: {randomWord}");
         
 
     }
@@ -178,7 +178,7 @@ public class Hangman
         //Console.WriteLine("  0  |");
         //Console.WriteLine(" /|\\ |");
         //Console.WriteLine(" /'\\ |");
-        //Console.WriteLine("     |");
+        //Console.WriteLine("     |");[¯¯]
         //Console.WriteLine("   ======");
 
         switch (wrongGuess)
@@ -186,79 +186,79 @@ public class Hangman
             case 0://does this one not run?
                 Console.WriteLine($"You have {rightGuess}-right and {wrongGuess}-wrong ");
                 Console.WriteLine("The word is: " + PrintWordLetters());
-                Console.WriteLine("  ----");
-                Console.WriteLine("  |  |");
-                Console.WriteLine("     |");
-                Console.WriteLine("     |");
-                Console.WriteLine("     |");
-                Console.WriteLine("     |");
-                Console.WriteLine("   ======");
+                Console.WriteLine("   -----");
+                Console.WriteLine("   |   |");
+                Console.WriteLine("       |");
+                Console.WriteLine("       |");
+                Console.WriteLine("       |");
+                Console.WriteLine("  [¯¯] |");
+                Console.WriteLine("  ========");
                 break;
             case 1:
                 Console.WriteLine($"You have {rightGuess}-right and {wrongGuess}-wrong ");
                 Console.WriteLine("The word is: " + PrintWordLetters());
-                Console.WriteLine("  ----");
-                Console.WriteLine("  |  |");
-                Console.WriteLine("  0  |");
-                Console.WriteLine("     |");
-                Console.WriteLine("     |");
-                Console.WriteLine("     |");
-                Console.WriteLine("   ======");
+                Console.WriteLine("   -----");
+                Console.WriteLine("   |   |");
+                Console.WriteLine("   ☺   |");
+                Console.WriteLine("       |");
+                Console.WriteLine("       |");
+                Console.WriteLine("  [¯¯] |");
+                Console.WriteLine("  ========");
                 break;
             case 2:
                 Console.WriteLine($"You have {rightGuess}-right and {wrongGuess}-wrong ");
                 Console.WriteLine("The word is: " + PrintWordLetters());
-                Console.WriteLine("  ----");
-                Console.WriteLine("  |  |");
-                Console.WriteLine("  0  |");
-                Console.WriteLine(" /   |");
-                Console.WriteLine("     |");
-                Console.WriteLine("     |");
-                Console.WriteLine("   ======");
+                Console.WriteLine("   -----");
+                Console.WriteLine("   |   |");
+                Console.WriteLine("   ☺   |");
+                Console.WriteLine("  /    |");
+                Console.WriteLine("       |");
+                Console.WriteLine("  [¯¯] |");
+                Console.WriteLine("  ========");
                 break;
             case 3:
                 Console.WriteLine($"You have {rightGuess}-right and {wrongGuess}-wrong ");
                 Console.WriteLine("The word is: " + PrintWordLetters());
-                Console.WriteLine("  ----");
-                Console.WriteLine("  |  |");
-                Console.WriteLine("  0  |");
-                Console.WriteLine(" /|  |");
-                Console.WriteLine("     |");
-                Console.WriteLine("     |");
-                Console.WriteLine("   ======");
+                Console.WriteLine("   -----");
+                Console.WriteLine("   |   |");
+                Console.WriteLine("   ☺   |");
+                Console.WriteLine("  /|   |");
+                Console.WriteLine("       |");
+                Console.WriteLine("  [¯¯] |");
+                Console.WriteLine("  ========");
                 break;
             case 4:
                 Console.WriteLine($"You have {rightGuess}-right and {wrongGuess}-wrong ");
                 Console.WriteLine("The word is: " + PrintWordLetters());
-                Console.WriteLine("  ----");
-                Console.WriteLine("  |  |");
-                Console.WriteLine("  0  |");
-                Console.WriteLine(" /|\\ |");
-                Console.WriteLine("     |");
-                Console.WriteLine("     |");
-                Console.WriteLine("   ======");
+                Console.WriteLine("   -----");
+                Console.WriteLine("   |   |");
+                Console.WriteLine("   ☺   |");
+                Console.WriteLine("  /|\\  |");
+                Console.WriteLine("       |");
+                Console.WriteLine("  [¯¯] |");
+                Console.WriteLine("  ========");
                 break;
             case 5:
                 Console.WriteLine($"You have {rightGuess}-right and {wrongGuess}-wrong ");
                 Console.WriteLine("The word is: " + PrintWordLetters());
-                Console.WriteLine("  ----");
-                Console.WriteLine("  |  |");
-                Console.WriteLine("  0  |");
-                Console.WriteLine(" /|\\ |");
-                Console.WriteLine(" /   |");
-                Console.WriteLine("     |");
-                Console.WriteLine("   ======");
+                Console.WriteLine("   -----");
+                Console.WriteLine("   |   |");
+                Console.WriteLine("   ☺   |");
+                Console.WriteLine("  /|\\  |");
+                Console.WriteLine("  /    |");
+                Console.WriteLine("  [¯¯] |");
+                Console.WriteLine("  ========");
                 break;
             case 6:
                 Console.WriteLine($"You have {rightGuess}-right and {wrongGuess}-wrong ");
                 Console.WriteLine("The word is: " + PrintWordLetters());
-                Console.WriteLine("  ----");
-                Console.WriteLine("  |  |");
-                Console.WriteLine("  0  |");
-                Console.WriteLine(" /|\\ |");
-                Console.WriteLine(" /'\\ |");
-                Console.WriteLine("     |");
-                Console.WriteLine("   ======");
+                Console.WriteLine("   ------");
+                Console.WriteLine("   |   |");
+                Console.WriteLine("   0   |");
+                Console.WriteLine("  /|\\  |");
+                Console.WriteLine("  /'\\  |");
+                Console.WriteLine("       |");
+                Console.WriteLine("  ========");
                 break;
 
             default:
