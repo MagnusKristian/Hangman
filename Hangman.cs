@@ -8,36 +8,69 @@ public class Hangman
     public int wrongGuess = 0;
     public string allUserGuesses = "";
     public string randomWord = "";
-    //public string[] words = { "word", "thing", "sun", "excalibur", "dependencies", "hangman" };
-    public string[] words = { "dependencies"};
+    public string[] words = { "word", "thing", "sun", "excalibur", "dependencies", "hangman" };
+    //public string[] words = { "dependencies"};
     public string underscoreWordV2 = "";
     public Hangman()
     {
-        RunGame();
+        //RunGame();
     }
 
+    public void playAgain()
+    {
+        Console.WriteLine("Would you like to play again? Y/N :");
+        string yesOrNo = Console.ReadLine().ToLower();
+        if (yesOrNo == "y")
+        {
+            RunGame();
+        }
+        else
+        {
+            Console.WriteLine("Thanks for playing! Goodbye!");
+        }
+    }
     public void RunGame()
     {
         Console.WriteLine("Welcome to Hangman! Guess the letters and try to not unalive this poor man.");
         setRandomWord();
 
-        while (wrongGuess <= 6)
+        while (true)
         {
-            Console.WriteLine("Enter a letter: ");
-            string userInputLetter = Console.ReadLine().ToLower().Substring(0, 1);
-            CheckIfRightOrWrong(randomWord, userInputLetter);
-            allUserGuesses += userInputLetter;
-            Console.WriteLine($"Here is your guesses: {allUserGuesses}");
-            Console.WriteLine("--------------------------------");
-            PrintHangman();
-            if (rightGuess == randomWord.Length)
+            if (wrongGuess >= 6)
             {
-                Console.WriteLine("Congrats, you won!");
+                Console.WriteLine("Sorry you lost the game...");
+                
                 return;
             }
-        }
+            if(randomWord == underscoreWordV2)
+            {
+                Console.WriteLine("Congrats! You won.");
+                return;
+            }
+            
+            Console.WriteLine("Enter a letter: ");
+            string userInputLetter = Console.ReadLine().ToLower().Substring(0, 1);
+            
+            if (!allUserGuesses.Contains(userInputLetter))
+            {
+                //Console.Clear();
+                CheckIfRightOrWrong(randomWord, userInputLetter);
+                allUserGuesses += userInputLetter;
+                //Console.WriteLine($"Here is your guesses: {allUserGuesses}");
+                Console.WriteLine("--------------------------------");
+                Console.WriteLine();
+                PrintHangman();
 
+            }
+            else if(allUserGuesses.Contains(userInputLetter))
+            {
+                Console.WriteLine("You have already guessed this letter, try again.");
+            }
+
+        }
+        playAgain();
         Console.WriteLine($"The word was: {randomWord}");
+        
 
     }
 
@@ -66,18 +99,23 @@ public class Hangman
             {
                 if (randomWord[i] == allUserGuesses[j])
                 {
-                    Console.WriteLine($"RIGHT LETTER: -{allUserGuesses[j]}-");
+                    //Console.WriteLine($"RIGHT LETTER: -{allUserGuesses[j]}-");
+
+
                     //Console.WriteLine($"All user guesses: {allUserGuesses}");
                     //Console.WriteLine($"UnderscoreWordV2: {underscoreWordV2}");
 
-                    if (true)
-                    {
+                    //if (randomWord.Contains(allUserGuesses[j]))
+                    //{
+                    //    Console.Write(allUserGuesses + " ---------");
+                    //    //rightGuess++;
+                    //}
+                    //else wrongGuess++;
 
-                    }
                     //....
-                    int letterPosition = randomWord.IndexOf(randomWord[i]);
+                    //int letterPosition = randomWord.IndexOf(randomWord[i]);
                     StringBuilder someString = new StringBuilder(underscoreWordV2);
-                    someString[letterPosition] = allUserGuesses[j];
+                    someString[i] = allUserGuesses[j];
                     underscoreWordV2 = someString.ToString();
 
 
@@ -122,7 +160,7 @@ public class Hangman
 
     public void CheckIfRightOrWrong(string word, string letter)
     {
-        if (word.Contains(letter) == true)
+        if (word.Contains(letter))
         {
             rightGuess++;
         }
@@ -228,4 +266,18 @@ public class Hangman
                 break;
         }
     }
+
+    //public string TommyTestJallaMethod()
+    //    {
+    //    var rightWord[] = words;
+
+    //    foreach (var VARIABLE in COLLECTION)
+    //    {
+            
+    //    }
+
+
+        
+
+    //    }
 }

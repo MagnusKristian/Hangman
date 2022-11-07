@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Hangman Hangman = new Hangman();
+            new MakeGame();
         }
     }
 }
