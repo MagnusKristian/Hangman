@@ -13,7 +13,6 @@ public class PrintHangman
         string warnUser = "";
     public void Print(int wrongGuess,int rightGuess)
     {
-        
         switch (wrongGuess)
         {
             case 0:
@@ -45,19 +44,16 @@ public class PrintHangman
                 break;
             default:
                 break;
-
-                
-
         }
-                Console.WriteLine($"You have {rightGuess}-right and {wrongGuess}-wrong ");
-                Console.WriteLine($"The word is: " /*+ PrintWordLetters()*/);
-                Console.WriteLine($"{warnUser}");
-                Console.WriteLine($"   ------");
-                Console.WriteLine($"   |   |");
-                Console.WriteLine($"   {head}   |");
-                Console.WriteLine($"  {leftArm}{torso}{rightArm}  |");
-                Console.WriteLine($"  {leftLeg}{torsoBottom}{rightLeg}  |");
-                Console.WriteLine($"  {crate} |");
-                Console.WriteLine($"  ========");
+        Console.WriteLine($"You have {rightGuess}-right and {wrongGuess}-wrong ");
+        Console.WriteLine($"The word is: " /*+ PrintWordLetters()*/);
+        Console.WriteLine($"{warnUser}");
+        Console.WriteLine($"   ------");
+        Console.WriteLine($"   |   |");
+        Console.WriteLine($"   {head}   |");
+        Console.WriteLine($"  {leftArm}{torso}{rightArm}  |");
+        Console.WriteLine($"  {leftLeg}{torsoBottom}{rightLeg}  |");
+        Console.WriteLine($"  {crate} |");
+        Console.WriteLine($"  ========");
     }
 }
